@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<div class="text-primary"><h3><%= @group.name %></h3></div>
+
+<p>
+ <div class="panel panel-title"><h4>メモ</h4></div>
+  <%= @group.comment %>
+</p>
+
+<%= link_to '編集', edit_company_group_path(@company, @group), class:'btn btn-primary' %>
+<%= link_to '社員一覧', company_group_users_path(@company, @group),class:'btn btn-primary' %>
+<%= link_to '部署一覧へ戻る', company_groups_path(@company), class:'btn btn-primary' %>
+
+<!--
+  <div id="comments_area">
+    <%#= render partial: 'comment_groups/index', locals: { comment_groups: @comments, group: @group } %>
+  </div>
+
+  <%#= render partial: 'comment_groups/form', locals: { comment_group: @comment, group: @group } %>
+   -->

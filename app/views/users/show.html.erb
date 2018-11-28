@@ -1,0 +1,29 @@
+<p id="notice" ><%= notice %></p>
+
+<table class="table table-hover table-striped">
+   <thead>
+     <tr>
+       <th>氏名</th>
+       <th>メールアドレス</th>
+       <th>電話番号</th>
+       <th></th>
+     </tr>
+   </thead>
+ 
+   <tbody>
+       <tr>
+          <td><%= @user.name %></td>
+          <td><%= @user.mail %></td>
+          <td><%= @user.tel %></td>
+          <td>
+	    <%= link_to '編集', edit_company_group_user_path(@company, @group, @user), class:'btn btn-default' %>
+            <%= link_to '名刺情報', company_group_user_name_cards_path(@company, @group, @user),class:'btn btn-default' %>
+	    <%= link_to '社員一覧へ戻る', company_group_users_path(@company, @group), class:'btn btn-default' %>
+         </td>
+         </tr>
+   </tbody>
+</table>
+  
+  <div class="panel panel-title"> <h4>メモ</h4></div>
+    <%= @user.comment %>
+  </div>

@@ -1,0 +1,2 @@
+$("#comments_area").html("<%= j(render 'comment_groups/index', { comment_groups: @comment.group.comment_groups, blog: @comment.group }) %>")
+$("textarea").val('')

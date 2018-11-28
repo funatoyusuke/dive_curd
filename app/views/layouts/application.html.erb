@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Curd</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+   <div id="wrap">
+    <div class="container"> 
+    <!-- <nav class="navbar navbar-default navbar-fixed-top">-->
+    <nav class="navbar navbar">
+     <!--<ul class="nav nav-tabs">-->
+       <% if log_user_signed_in? %>
+            <div class="text-right"> 
+	      <li role="presentation">
+	      <%= link_to "会社一覧", companies_path,class: "btn btn-primary" %>
+              <%= link_to "ログアウト", destroy_log_user_session_path, method: :delete, class: "btn btn-primary"%></div>
+         <% else %>
+	      <div class="text-right">
+	      <%= link_to 'ログイン', new_log_user_session_path, class:'btn btn-primary' %>
+	      <%= link_to '新規登録', new_log_user_registration_path, class:'btn btn-primary' %></li></div>
+        <% end %>
+      
+
+
+      <% if flash[:notice] %>
+        <p><%= flash[:notice] %></p>
+      <% end %>
+      <% if flash[:alert] %>
+        <p><%= flash[:alert] %></p>
+      <% end %>
+  
+      <div class="center-block">     
+        <%= yield %>
+      </div>
+
+    </div>
+   </div>
+
+      <footer class="footer">
+        <div class="container">
+          <p class="text-muted">2018 名刺管理アプリ</p>
+        </div>
+      </footer>
+
+  </body>
+</html>

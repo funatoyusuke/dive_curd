@@ -1,0 +1,3 @@
+class CommentUser < ApplicationRecord
+  belongs_to :user
+end

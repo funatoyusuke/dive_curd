@@ -1,0 +1,26 @@
+<div class="container">
+   <div class="text-center">
+       <%= form_for([@company, @group]) do |f| %>
+       <% if @group.errors.any? %>
+       <div id="error_exp;anation">
+
+          <h2><%= pluralize(@group.errors.count, 'エラー') %>saved</h2>
+
+         <ul>
+           <% @group.errors.full_messages.each do |msg| %>
+             <li><%= msg %></li>
+           <% end %>
+         </ul>
+       </div>
+     <% end %>
+
+     <div class="field">
+          <%= f.text_field :name, autofocus: true, placeholder: "部署名", class: "form-control" %><br>
+          <%= f.text_area :comment, autofocus: true, placeholder: "メモ", class: "form-control", rows: 12 %><br>
+     </div>
+       <%= f.submit "更新する", class:'btn btn-primary'%>
+     
+   <% end %>
+   </div>
+ </div>
+

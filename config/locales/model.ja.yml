@@ -1,0 +1,31 @@
+ja:
+  activerecord:
+     models:
+       company: "会社"
+       group: "部署"
+       user: "社員"
+       name_card: "名刺"
+     attributes:
+       company:
+         name: "会社名"
+         address: "住所"
+         fax: "ファックス"
+         tel: "電話番号"
+         url: "webサイトurl"
+         comment: "メモ"
+       group:
+         name: "部署名"
+         comment: "メモ"
+       user:
+         name: "名前"
+         mail: "メールアドレス"
+         tel: "電話番号"
+         comment: "メモ"
+       name_card:
+         name: "名前"
+         address: "住所"
+         fax: "ファックス"
+         tel: "電話番号"
+         url: "url"
+
+

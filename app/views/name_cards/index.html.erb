@@ -1,0 +1,41 @@
+<div class="text-primary"><h4><%= @company.name %>:<%= @group.name %>:<%= @user.name %>さん</h4>
+<h3>名刺情報</h3></div><br>
+
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th>氏名</th>
+      <th>住所</th>
+      <th>電話番号</th>
+      <th>ファックス</th>
+      <th>Webサイト</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+     <% @name_cards.each do |name_card| %>
+       <tr>
+         <td><%= name_card.name %></td>
+         <td><%= name_card.address %></td>
+         <td><%= name_card.tel %></td>
+         <td><%= name_card.fax %></td>
+         <td><%= name_card.url %></td>
+         <td>
+           <%= link_to '詳細', company_group_user_name_card_path(@company, @group, @user, name_card),class:'btn btn-default' %>
+           <%= link_to '編集', edit_company_group_user_name_card_path(@company, @group, @user, name_card),class:'btn btn-default' %>
+           <%= link_to '削除', company_group_user_name_card_path(@company, @group, @user, name_card), method: :delete, data: { confirm: '削除しますか?' }, class:'btn btn-default' %>
+       </td>
+       </tr>
+     <% end %>
+  </tbody>
+</table>
+
+<%= paginate @name_cards %>
+
+<br>
+
+<div class="text-center">
+<%= link_to '名刺を追加する', new_company_group_user_name_card_path,class:'btn btn-primary' %>
+<%= link_to '社員一覧へ戻る', company_group_users_path,class:'btn btn-primary' %>
+</div>

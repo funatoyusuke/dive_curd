@@ -1,0 +1,8 @@
+<h1>編集する</h1>
+
+<%= render 'form' %>
+<br>
+
+  <%= link_to '詳細', company_group_user_path(@company, @group, @user), class:'btn btn-primary' %>
+  <%= link_to '社員一覧へもどる', company_group_users_path(@company, @group), class:'btn btn-primary' %>
+

@@ -1,0 +1,41 @@
+<div class="container">
+   <div class="content-center">
+     <%= form_for([@company, @group, @user, @name_card]) do |f| %>
+       <% if @name_card.errors.any? %>
+       <div id="error_exp;anation">
+         <h2><%= pluralize(@name_card.errors.count, 'エラー') %>saved</h2>
+
+         <ul>
+           <% @name_card.errors.full_messages.each do |msg| %>
+             <li><%= msg %></li>
+           <% end %>
+         </ul>
+       </div>
+     <% end %>
+
+     <div class="field">
+       <div class="form-low">
+         <div class="col-md-6 col-xs-12">
+          <%= f.text_field :name, autofocus: true, placeholder: "名前", class: "form-control" %><br>
+          <%= f.text_field :address, autofocus: true, placeholder: "住所", class: "form-control" %><br>
+          <%= f.text_field :tel, autofocus: true, placeholder: "電話番号", class: "form-control" %><br>
+	 </div>
+	 <div class="col-md-6 col-xs-12">
+          <%= f.text_field :fax, autofocus: true, placeholder: "ファックス", class: "form-control" %><br>
+          <%= f.text_field :url, autofocus: true, placeholder: "Webサイト", class: "form-control" %><br>
+         </div>
+       <div class="field">
+         <%= f.label :名刺 %>
+         <%= f.file_field :image %>
+       </div><br>
+
+
+     </div>
+     </div>
+     <div class="actions text-center "><br>
+        <%= f.submit "更新する", class:'btn btn-primary'%>
+     </div>
+   <% end %>
+   </div>
+ </div>
+

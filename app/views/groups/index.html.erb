@@ -1,0 +1,33 @@
+<div class="text-primary"><h4><%= @company.name %></h4>
+<h3>部署一覧</h3></div><br>
+
+<table class="table table-hover table-striped" >
+  <thead>
+    <tr>
+      <th>部署名</th>
+      <th>メモ</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= group.name %></td>
+	<td><%= "#{group.comment}".truncate(75) %></td>
+        <td><%= link_to '詳細', company_group_path(@company, group), class:'btn btn-default' %>
+            <%= link_to '編集', edit_company_group_path(@company, group), class:'btn btn-default' %>
+            <%= link_to '削除', company_group_path(@company, group), method: :delete, data: { confirm: '削除してもいいですか?' }, class:'btn btn-default' %>
+             <%= link_to '社員一覧へ', company_group_users_path(@company, group), class:'btn btn-default' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @groups %>
+
+<br>
+
+<div class="text-center">
+<%= link_to '部署を追加する', new_company_group_path(@company), class:'btn btn-primary' %>
+<%= link_to '会社一覧へ戻る', companies_path, class:'btn btn-primary' %>
+</div>

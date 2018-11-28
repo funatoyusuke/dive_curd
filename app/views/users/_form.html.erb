@@ -1,0 +1,32 @@
+<div class="container">
+   <div class="content-center">
+     <%= form_for([@company, @group, @user]) do |f| %>
+       <% if @user.errors.any? %>
+       <div id="error_exp;anation">
+         <h2><%= pluralize(@user.errors.count, 'エラー') %>saved</h2>
+   
+         <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+             <li><%= msg %></li>
+           <% end %>
+         </ul>
+       </div>
+     <% end %>
+ 
+     <div class="field">
+       <div class="form-low">
+        <div class="col-md-5 col-xs-12">
+          <%= f.text_field :name, autofocus: true, placeholder: "氏名", class: "form-control" %><br>
+          <%= f.text_field :mail, autofocus: true, placeholder: "メールアドレス", class: "form-control" %><br>
+          <%= f.text_field :tel, autofocus: true, placeholder: "電話番号", class: "form-control" %><br>
+        </div>
+        <div class="col-md-7 col-xs-12">
+          <%= f.text_area :comment, autofocus: true, placeholder: "メモ", class: "form-control", rows: 12 %><br>
+        </div>
+       </div>
+      </div>
+     <div class="actions text-center "><br>
+        <%= f.submit "更新する", class:'btn btn-primary' %>
+    <% end %>
+   </div>
+</div>

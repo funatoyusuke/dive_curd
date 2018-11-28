@@ -1,0 +1,22 @@
+#content {
+  font-family: "Lato";
+  font-weight: 300;
+  width: 80%;
+  margin: 2em auto;
+  
+  border-top: 2px solid #555;
+  border-bottom: 2px solid #555;
+  line-height: 1.4;
+  padding: 20px 0;
+  background: #CCC;
+  background-image: -webkit-gradient(linear,0% 0%,25% 100%,from(#FF2C2C),to(#7A5E91));
+  background-image: -moz-gradient(linear,0% 0%,25% 100%,from(#FF2C2C),to(#7A5E91));
+  background-image: -ms-gradient(linear,0% 0%,25% 100%,from(#FF2C2C),to(#7A5E91));
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+}
+
+li{
+    list-style:none;
+}
