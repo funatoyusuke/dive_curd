@@ -20,3 +20,23 @@
 li{
     list-style:none;
 }
+
+
+body , html {
+    height: 100%;
+}
+
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+.text-muted {
+    color: white;
+    margin-top: 40px;
+    background-color: #DAE3F2;
+    min-height: 100%;
+}
